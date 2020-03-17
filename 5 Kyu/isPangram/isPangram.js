@@ -7,7 +7,7 @@ function isPangram(str) {
   let result = true;
 
   allLeters.forEach(letter => {
-    if(!str.includes(letter)) {
+    if(!str.toLowerCase().includes(letter)) {
       result = false;
     }
   });
