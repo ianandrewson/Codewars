@@ -3,8 +3,16 @@
 // Given a string, detect whether or not it is a pangram. Return True if it is, False if not. Ignore numbers and punctuation.
 
 function isPangram(str) {
+  const allLeters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+  let result = true;
 
-  return '';
+  allLeters.forEach(letter => {
+    if(!str.includes(letter)) {
+      result = false;
+    }
+  });
+
+  return result;
 }
 
 module.exports = isPangram;
