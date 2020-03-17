@@ -4,8 +4,8 @@
 
 
 function findOdd(arr) {
-  
-    return 0;
+    
+  return arr;
 }
 
-export default findOdd;
+module.exports = findOdd;
