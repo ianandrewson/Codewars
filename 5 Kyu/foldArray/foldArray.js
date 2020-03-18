@@ -25,7 +25,29 @@
 // The input array should not be modified!
 
 function foldArray(array, runs) {
-  return [ 0 ];
+  let finalResult = [];
+  let runResult = array;
+  const creaseIndex = Math.floor(array.length / 2);
+
+  if(runResult.length === 1) {
+    return runResult;
+  } 
+  
+  runResult = [];
+  for(let i = 0; i < creaseIndex; i++) {
+    runResult.push(array[i] + array[array.length - 1 - i]);
+  }
+
+  console.log('runResult: ', runResult, '; array: ', array);
+
+  if(array.length % 2 === 1) {
+    runResult.push(array[Math.ceil(array.length / 2)]);
+  }
+  
+  finalResult = runResult;
+  console.log('final result: ', finalResult);
+  
+  return finalResult;
 }
 
 module.exports = foldArray;
