@@ -26,32 +26,22 @@
 
 function foldArray(array, runs) {
   let finalResult = array;
-  let iterationCount = 0;
   
-  do{
+  for(let i = 0; i < runs; i++){
     const creaseIndex = Math.floor(finalResult.length / 2);
+    const runResult = [];
+
     if(finalResult.length === 1) {
       return finalResult;
     } 
-    iterationCount++; 
-    console.log('iteration count: ', iterationCount, '; runs: ', runs);
-    const runResult = [];
     for(let i = 0; i < creaseIndex; i++) {
       runResult.push(finalResult[i] + finalResult[finalResult.length - 1 - i]);
     }
-
-    
     if(finalResult.length % 2 === 1) {
       runResult.push(finalResult[Math.floor(finalResult.length / 2)]);
     }
-
-    console.log('runResult: ', runResult, '; array: ', array);
-    
     finalResult = runResult;
-  } while(iterationCount < runs);
-
-  console.log('final result: ', finalResult);
-
+  }
   return finalResult;
 }
 
