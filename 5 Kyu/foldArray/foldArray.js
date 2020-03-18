@@ -25,29 +25,35 @@
 // The input array should not be modified!
 
 function foldArray(array, runs) {
-  let finalResult = [];
-  let runResult = array;
-  const creaseIndex = Math.floor(array.length / 2);
-
-  if(runResult.length === 1) {
-    return runResult;
-  } 
+  let finalResult = array;
+  let iterationCount = 0;
   
-  runResult = [];
-  for(let i = 0; i < creaseIndex; i++) {
-    runResult.push(array[i] + array[array.length - 1 - i]);
-  }
+  do{
+    const creaseIndex = Math.floor(finalResult.length / 2);
+    if(finalResult.length === 1) {
+      return finalResult;
+    } 
+    iterationCount++; 
+    console.log('iteration count: ', iterationCount, '; runs: ', runs);
+    const runResult = [];
+    for(let i = 0; i < creaseIndex; i++) {
+      runResult.push(finalResult[i] + finalResult[finalResult.length - 1 - i]);
+    }
 
-  console.log('runResult: ', runResult, '; array: ', array);
+    
+    if(finalResult.length % 2 === 1) {
+      runResult.push(finalResult[Math.floor(finalResult.length / 2)]);
+    }
 
-  if(array.length % 2 === 1) {
-    runResult.push(array[Math.ceil(array.length / 2)]);
-  }
-  
-  finalResult = runResult;
+    console.log('runResult: ', runResult, '; array: ', array);
+    
+    finalResult = runResult;
+  } while(iterationCount < runs);
+
   console.log('final result: ', finalResult);
-  
+
   return finalResult;
 }
 
 module.exports = foldArray;
+
