@@ -28,12 +28,12 @@ function PaginationHelper(collection, itemsPerPage){
 
 // returns the number of items within the entire collection
 PaginationHelper.prototype.itemCount = function() {
-  
+  return this.collection.length;
 };
 
 // returns the number of pages
 PaginationHelper.prototype.pageCount = function() {
-  
+  return Math.ceil(this.collection.length / this.itemsPerPage);
 };
 
 // returns the number of items on the current page. page_index is zero based.
