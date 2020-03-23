@@ -26,7 +26,7 @@ function binaryToByteArray(binaryNum){
 }
 
 function byteToInt(byte){
-
+  return parseInt(byte, 2);
 }
 
 function byteArrayToIp(byteArray){
