@@ -37,7 +37,7 @@ function byteArrayToIp(byteArray){
 }
 
 function int32ToIp(int32){
-  return;
+  return byteArrayToIp(binaryToByteArray(int32ToBinary(int32)));
 }
 
 module.exports = { int32ToIp, int32ToBinary, binaryToByteArray, byteToInt, byteArrayToIp };
