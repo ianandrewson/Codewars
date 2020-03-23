@@ -33,13 +33,18 @@ PaginationHelper.prototype.itemCount = function() {
 
 // returns the number of pages
 PaginationHelper.prototype.pageCount = function() {
-  return Math.ceil(this.collection.length / this.itemsPerPage);
+  return Math.ceil(this.itemCount() / this.itemsPerPage);
 };
 
 // returns the number of items on the current page. page_index is zero based.
 // this method should return -1 for pageIndex values that are out of range
 PaginationHelper.prototype.pageItemCount = function(pageIndex) {
-  
+  if(pageIndex + 1 > this.pageCount()) {
+    return -1;
+  } else if(pageIndex + 1 < this.pageCount()) {
+    return this.itemsPerPage;
+  } else return this.itemsPerPage - (this.itemsPerPage * this.pageCount() - this.itemCount())
+
 };
 
 // determines what page an item is on. Zero based indexes
