@@ -14,7 +14,7 @@
 // Complete the function that takes an unsigned 32 bit number and returns a string representation of its IPv4 address.
 
 function int32ToIp(int32){
-  return;
+  return int32ToBinary(int32);
 }
 
 function int32ToBinary(int32){
@@ -22,7 +22,7 @@ function int32ToBinary(int32){
 }
 
 function binaryToByteArray(binaryNum){
-
+  return [binaryNum.slice(0, 8), binaryNum.slice(8, 16), binaryNum.slice(16, 24), binaryNum.slice(24)];
 }
 
 function byteToInt(byte){
