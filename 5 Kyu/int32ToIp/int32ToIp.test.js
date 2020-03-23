@@ -23,4 +23,10 @@ describe('int32ToIp tests', () => {
   it('should be able to convert a 32 bit binary number to 4 bytes', () => {
     expect(binaryToByteArray(int32ToBinary(1))).toEqual(['00000000', '00000000', '00000000', '00000001']);
   });
+
+  it('should be able to convert a byte to an int', () => {
+    expect(byteToInt('00000001')).toEqual(1);
+    expect(byteToInt('00000011')).toEqual(3);
+    expect(byteToInt('11111111')).toEqual(255);
+  });
 });
