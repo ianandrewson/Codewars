@@ -36,4 +36,10 @@ describe('int32ToIp tests', () => {
     expect(byteArrayToIp(['00000000', '00000001', '00000000', '00000001'])).toEqual('0.1.0.1');
     expect(byteArrayToIp(['00000011', '00000000', '00000000', '00000001'])).toEqual('3.0.0.1');
   });
+
+  it('should be able to convert a 32 bit unsigned integer to an IP address', () => {
+    expect(int32ToIp(1)).toEqual('0.0.0.1');
+    expect(int32ToIp(256)).toEqual('0.0.1.0');
+    expect(int32ToIp(257)).toEqual('0.0.1.1');
+  });
 });

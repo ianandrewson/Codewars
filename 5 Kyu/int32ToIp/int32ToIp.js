@@ -13,10 +13,6 @@
 
 // Complete the function that takes an unsigned 32 bit number and returns a string representation of its IPv4 address.
 
-function int32ToIp(int32){
-  return int32ToBinary(int32);
-}
-
 function int32ToBinary(int32){
   return (int32 >>> 0).toString(2).padStart(32, 0);
 }
@@ -38,6 +34,10 @@ function byteArrayToIp(byteArray){
     }
   });
   return result;
+}
+
+function int32ToIp(int32){
+  return;
 }
 
 module.exports = { int32ToIp, int32ToBinary, binaryToByteArray, byteToInt, byteArrayToIp };
