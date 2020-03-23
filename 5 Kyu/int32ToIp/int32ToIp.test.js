@@ -19,4 +19,8 @@ describe('int32ToIp tests', () => {
     expect(int32ToBinary(4096)).toEqual('00000000000000000001000000000000');
     expect(int32ToBinary(8192)).toEqual('00000000000000000010000000000000');
   });
+
+  it('should be able to convert a 32 bit binary number to 4 bytes', () => {
+    expect(binaryToByteArray(int32ToBinary(1))).toEqual(['00000000', '00000000', '00000000', '00000001']);
+  });
 });
