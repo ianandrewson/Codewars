@@ -17,4 +17,20 @@ function int32ToIp(int32){
   //...
 }
 
-module.exports = int32ToIp;
+function int32toBinary(int32){
+
+}
+
+function binaryToByteArray(binaryNum){
+
+}
+
+function byteToInt(byte){
+
+}
+
+function byteArrayToIp(byteArray){
+
+}
+
+module.exports = { int32ToIp, int32toBinary, binaryToByteArray, byteToInt, byteArrayToIp };
