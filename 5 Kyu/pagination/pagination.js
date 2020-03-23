@@ -49,7 +49,11 @@ PaginationHelper.prototype.pageItemCount = function(pageIndex) {
 // determines what page an item is on. Zero based indexes
 // this method should return -1 for itemIndex values that are out of range
 PaginationHelper.prototype.pageIndex = function(itemIndex) {
-  
+  if(itemIndex < 0 || itemIndex + 1 > this.itemCount()) {
+    return -1;
+  } else {
+    return Math.floor((itemIndex + 1) / this.itemsPerPage);
+  }
 };
 
 module.exports = PaginationHelper;
