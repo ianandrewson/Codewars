@@ -13,7 +13,11 @@ describe('pagination tests', () => {
     expect(paginator.pageCount).toBeDefined();
     expect(paginator.pageItemCount).toBeDefined();
     expect(paginator.pageIndex).toBeDefined();
+    expect(paginator.collection).toEqual(['a', 'b', 'c', 'd', 'e', 'f']);
+    expect(paginator.itemsPerPage).toEqual(4);
   });
+
+
 
   it('can count the number of items in the collection', () => {
     expect(paginator.itemCount()).toEqual(6);

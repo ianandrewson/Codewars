@@ -22,7 +22,8 @@
 // The constructor takes in an array of items and a integer indicating how many
 // items fit within a single page
 function PaginationHelper(collection, itemsPerPage){
-  
+  this.collection = collection;
+  this.itemsPerPage = itemsPerPage;
 }
 
 // returns the number of items within the entire collection
