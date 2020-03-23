@@ -29,4 +29,11 @@ describe('int32ToIp tests', () => {
     expect(byteToInt('00000011')).toEqual(3);
     expect(byteToInt('11111111')).toEqual(255);
   });
+
+  it('should be able to convert an array of bytes to an IP', () => {
+    expect(byteArrayToIp(['00000000', '00000000', '00000001', '00000001'])).toEqual('0.0.0.1');
+    expect(byteArrayToIp(['00000000', '00000000', '00000000', '00000001'])).toEqual('0.0.1.1');
+    expect(byteArrayToIp(['00000000', '00000001', '00000000', '00000001'])).toEqual('0.1.0.1');
+    expect(byteArrayToIp(['00000011', '00000000', '00000000', '00000001'])).toEqual('3.0.0.1');
+  });
 });
