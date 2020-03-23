@@ -30,7 +30,14 @@ function byteToInt(byte){
 }
 
 function byteArrayToIp(byteArray){
-
+  let result = '';
+  byteArray.forEach((byte, i) => {
+    result += byteToInt(byte).toString();
+    if(i < byteArray.length - 1) {
+      result += '.';
+    }
+  });
+  return result;
 }
 
 module.exports = { int32ToIp, int32ToBinary, binaryToByteArray, byteToInt, byteArrayToIp };
